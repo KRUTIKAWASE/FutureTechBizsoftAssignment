@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FutureTechBizsoftLLPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="City_Mas_Tbl">
+          <Key>
+            <PropertyRef Name="CITY_CODE" />
+          </Key>
+          <Property Name="CITY_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CITY_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="STATE_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="COUNRTY_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SORT_NO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dept_Mas_Tbl">
+          <Key>
+            <PropertyRef Name="DEPT_CODE" />
+          </Key>
+          <Property Name="DEPT_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DEPT_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SORT_NO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emp_Mas_Tbl">
+          <Key>
+            <PropertyRef Name="EMP_CODE" />
+          </Key>
+          <Property Name="EMP_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MIDDLE_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LAST_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FULL_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="JOIN_DATE" Type="date" Nullable="false" />
+          <Property Name="CITY_CODE" Type="int" Nullable="false" />
+          <Property Name="DEPT_CODE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emp_Salary_Tbl">
+          <Key>
+            <PropertyRef Name="SEQ_NO" />
+          </Key>
+          <Property Name="SEQ_NO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_CODE" Type="int" Nullable="false" />
+          <Property Name="MONTH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SALARY" Type="int" Nullable="false" />
+          <Property Name="COMMENTS" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Function Name="uspgetemployeelist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="uspgetsalary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="FutureTechBizsoftLLPModelStoreContainer">
+          <EntitySet Name="City_Mas_Tbl" EntityType="Self.City_Mas_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dept_Mas_Tbl" EntityType="Self.Dept_Mas_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Mas_Tbl" EntityType="Self.Emp_Mas_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Salary_Tbl" EntityType="Self.Emp_Salary_Tbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FutureTechBizsoftLLPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="City_Mas_Tbl">
+          <Key>
+            <PropertyRef Name="CITY_CODE" />
+          </Key>
+          <Property Name="CITY_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CITY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COUNRTY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SORT_NO" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dept_Mas_Tbl">
+          <Key>
+            <PropertyRef Name="DEPT_CODE" />
+          </Key>
+          <Property Name="DEPT_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SORT_NO" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emp_Mas_Tbl">
+          <Key>
+            <PropertyRef Name="EMP_CODE" />
+          </Key>
+          <Property Name="EMP_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MIDDLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FULL_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="JOIN_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CITY_CODE" Type="Int32" Nullable="false" />
+          <Property Name="DEPT_CODE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emp_Salary_Tbl">
+          <Key>
+            <PropertyRef Name="SEQ_NO" />
+          </Key>
+          <Property Name="SEQ_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_CODE" Type="Int32" Nullable="false" />
+          <Property Name="MONTH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SALARY" Type="Int32" Nullable="false" />
+          <Property Name="COMMENTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FutureTechBizsoftLLPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="City_Mas_Tbl" EntityType="Self.City_Mas_Tbl" />
+          <EntitySet Name="Dept_Mas_Tbl" EntityType="Self.Dept_Mas_Tbl" />
+          <EntitySet Name="Emp_Mas_Tbl" EntityType="Self.Emp_Mas_Tbl" />
+          <EntitySet Name="Emp_Salary_Tbl" EntityType="Self.Emp_Salary_Tbl" />
+          <FunctionImport Name="uspgetemployeelist" ReturnType="Collection(FutureTechBizsoftLLPModel.uspgetemployeelist_Result)" />
+          <FunctionImport Name="uspgetsalary" ReturnType="Collection(FutureTechBizsoftLLPModel.uspgetsalary_Result)" />
+        </EntityContainer>
+        <ComplexType Name="uspgetemployeelist_Result">
+          <Property Type="Int32" Name="EMP_CODE" Nullable="false" />
+          <Property Type="String" Name="FIRST_NAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MIDDLE_NAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LAST_NAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FULL_NAME" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DOB" Nullable="false" />
+          <Property Type="DateTime" Name="JOIN_DATE" Nullable="false" />
+          <Property Type="String" Name="CITY_NAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DEPT_NAME" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="SALARY" Nullable="false" />
+          <Property Type="Int32" Name="SORT_NO" Nullable="false" />
+          <Property Type="Int32" Name="depart" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="uspgetsalary_Result">
+          <Property Type="Int32" Name="SEQ_NO" Nullable="false" />
+          <Property Type="String" Name="MONTH" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="SALARY" Nullable="false" />
+          <Property Type="String" Name="COMMENTS" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FULL_NAME" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FutureTechBizsoftLLPModelStoreContainer" CdmEntityContainer="FutureTechBizsoftLLPEntities">
+          <EntitySetMapping Name="City_Mas_Tbl">
+            <EntityTypeMapping TypeName="FutureTechBizsoftLLPModel.City_Mas_Tbl">
+              <MappingFragment StoreEntitySet="City_Mas_Tbl">
+                <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+                <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+                <ScalarProperty Name="STATE_NAME" ColumnName="STATE_NAME" />
+                <ScalarProperty Name="COUNRTY_NAME" ColumnName="COUNRTY_NAME" />
+                <ScalarProperty Name="SORT_NO" ColumnName="SORT_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dept_Mas_Tbl">
+            <EntityTypeMapping TypeName="FutureTechBizsoftLLPModel.Dept_Mas_Tbl">
+              <MappingFragment StoreEntitySet="Dept_Mas_Tbl">
+                <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+                <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+                <ScalarProperty Name="SORT_NO" ColumnName="SORT_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Mas_Tbl">
+            <EntityTypeMapping TypeName="FutureTechBizsoftLLPModel.Emp_Mas_Tbl">
+              <MappingFragment StoreEntitySet="Emp_Mas_Tbl">
+                <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="JOIN_DATE" ColumnName="JOIN_DATE" />
+                <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+                <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Salary_Tbl">
+            <EntityTypeMapping TypeName="FutureTechBizsoftLLPModel.Emp_Salary_Tbl">
+              <MappingFragment StoreEntitySet="Emp_Salary_Tbl">
+                <ScalarProperty Name="SEQ_NO" ColumnName="SEQ_NO" />
+                <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+                <ScalarProperty Name="MONTH" ColumnName="MONTH" />
+                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+                <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="uspgetemployeelist" FunctionName="FutureTechBizsoftLLPModel.Store.uspgetemployeelist">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FutureTechBizsoftLLPModel.uspgetemployeelist_Result">
+                <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="JOIN_DATE" ColumnName="JOIN_DATE" />
+                <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+                <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+                <ScalarProperty Name="SORT_NO" ColumnName="SORT_NO" />
+                <ScalarProperty Name="depart" ColumnName="depart" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uspgetsalary" FunctionName="FutureTechBizsoftLLPModel.Store.uspgetsalary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FutureTechBizsoftLLPModel.uspgetsalary_Result">
+                <ScalarProperty Name="SEQ_NO" ColumnName="SEQ_NO" />
+                <ScalarProperty Name="MONTH" ColumnName="MONTH" />
+                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+                <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+                <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

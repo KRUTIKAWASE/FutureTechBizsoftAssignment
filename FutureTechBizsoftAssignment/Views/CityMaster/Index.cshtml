@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <script src="~/Content/pages/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/pages/City.js"></script>
+
+</head>
+
+<body>
+    <div class="col-lg-12">
+        <div class="col-lg-10">
+            <h2>CITY MASTER</h2><hr />
+
+            <label>CITY NAME:</label>
+            <input type="text" id="txtName" class="form-control" name="cityname" />
+
+            <label>STATE NAME:</label>
+            <input type="text" id="txtState" class="form-control" name="statename" />
+
+            <label>COUNRTY NAME:</label>
+            <input type="text" id="txtCountry" class="form-control" name="countryname" />
+
+            <label>SORT_NO:</label>
+            <input type="text" id="txtSort" class="form-control" name="sort" />
+            
+            <input type="submit" value="SUBMIT" class="btn btn-success" onclick="saveCity()" />
+
+        </div><br />
+        <div>
+            <table id="City_Mas_Tbl" border="1">
+                <thead>
+                <th>CITY_CODE</th>
+                <th>CITY_NAME</th>
+                <th>STATE_NAME</th>
+                <th>COUNTRY_NAME</th>
+                <th>SORT_NO</th>
+                <th></th>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

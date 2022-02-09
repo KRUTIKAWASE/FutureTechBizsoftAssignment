@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Content/pages/Employee.js"></script>
+<script src="~/Content/pages/jquery-1.11.1.min.js"></script>
+
+<div class="col-lg-12">
+    <div class="col-lg-10">
+        <h2>EMPLOYEE MASTER</h2><hr />
+
+        <label id="txtfirstname">FIRST NAME:</label>
+        <input type="text" id="txtFirstName" class="form-control" name="Name" />
+
+        <label id="txtmiddlename">MIDDLE NAME:</label>
+        <input type="text" id="txtMiddleName" class="form-control" name="Address" />
+
+        <label id="txtlastname">LAST NAME:</label>
+        <input type="text" id="txtLastName" class="form-control" name="Mobile" />
+
+        <label>DOB:</label>
+        <input type="date" id="txtDOB" class="form-control" name="Mobile" />
+
+        <label>JOINING DATE:</label>
+        <input type="date" id="txtJoinDate" class="form-control" name="Mobile" />
+
+        <label>CITY NAME:</label>
+        <select id="ddlCity" class="form-control"></select>
+
+        <label>DEPT NAME:</label>
+        <select id="ddlDept" class="form-control"></select>
+
+        <input type="submit" value="SUBMIT" class="btn btn-success" onclick="saveEmployee()" />
+
+    </div><br />
+    
+</div>
+<script type="text/javascript" lang="js">
+    $(function () {
+        $("input[type=text]").keypress(function () {
+            var textName = document.getElementById("txtFirstName");
+            var label = document.getElementById("txtfirstname").value;
+            textName.innerHTML = label;
+            var textName = document.getElementById("txtMiddleName");
+            var label = document.getElementById("txtmiddlename").value;
+            textName.innerHTML = label;
+            var textName = document.getElementById("txtLastName");
+            var label = document.getElementById("txtlastname").value
+            textName.innerHTML = label;
+            
+        });
+    });
+</script>

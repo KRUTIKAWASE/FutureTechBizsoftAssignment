@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/pages/Salary.js"></script>
+
+
+<div class="col-lg-12">
+    <div class="col-lg-10">
+        <h2>SALARY MASTER</h2><hr />
+
+        <label>EMP_NAME:</label>
+        <select id="ddlEmp" class="form-control"></select>
+
+        <label>MONTH:</label>
+        <select id="ddlMonth" class="form-control">
+            <option>--Select Month--</option>
+            <option>JAN</option>
+            <option>FEB</option>
+            <option>MAR</option>
+            <option>APR</option>
+            <option>MAY</option>
+            <option>JUN</option>
+            <option>JUL</option>
+            <option>AUG</option>
+            <option>SEP</option>
+            <option>OCT</option>
+            <option>NOV</option>
+            <option>DEC</option>
+        </select>
+
+        <label>SALARY:</label>
+        <input type="text" id="txtSalary" class="form-control" name="salary" />
+
+        <label>COMMENTS:</label>
+        <input type="text" id="txtComment" class="form-control" name="comment" />
+
+
+        <input type="submit" value="SUBMIT" class="btn btn-success" onclick="saveSalary()" />
+
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div>
+         <table id="Emp_Salary_Tbl" border="1">
+            <thead>
+            <th>SEQ_NO</th>
+            <th>FULL_NAME</th>
+            <th>MONTH</th>
+            <th>SALARY</th>
+            <th>COMMENTS</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+    </div>
+</div>
+
